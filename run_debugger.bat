@@ -1,0 +1,1 @@
+java -cp ./bin org.jpc.debugger.JPC -fda mem:odin070.img -hda dir:staging -boot fda

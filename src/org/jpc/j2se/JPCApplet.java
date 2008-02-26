@@ -469,7 +469,7 @@ public class JPCApplet extends JApplet
             
             try
             {
-                pc = PC.createPC(args, new VirtualClock()); 
+                pc = OxfordPC.createPC(args, new VirtualClock()); 
             }
             catch (Exception e) 
             {

@@ -32,7 +32,7 @@ import org.jpc.emulator.processor.*;
 import org.jpc.emulator.*;
 import java.io.*;
 
-public class Keyboard extends AbstractHardwareComponent implements IOPortCapable
+public class Keyboard extends AbstractHardwareComponent implements UserInputDevice, IOPortCapable
 {
 
     /* Keyboard Controller Commands */

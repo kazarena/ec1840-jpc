@@ -730,7 +730,7 @@ public class JPC extends ApplicationFrame implements ActionListener
         objects.removeObject(PhysicalAddressSpace.class);
         objects.removeObject(LinearAddressSpace.class);
         objects.removeObject(VGACard.class);
-        objects.removeObject(Keyboard.class);
+        objects.removeObject(UserInputDevice.class);
         objects.removeObject(ProcessorAccess.class);
         objects.removeObject(CodeBlockRecord.class);
         
@@ -772,7 +772,7 @@ public class JPC extends ApplicationFrame implements ActionListener
 
     public PC createPC(DriveSet drives) throws IOException
     {
-        PC newPC = new PC(new VirtualClock(), drives);
+        PC newPC = new OxfordPC(new VirtualClock(), drives);
         
         BlockDevice fdd = drives.getFloppyDrive(0);
         if (fdd != null)

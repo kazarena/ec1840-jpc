@@ -28,6 +28,7 @@
 package org.jpc.j2se;
 
 import java.util.*;
+import java.util.logging.LogManager;
 import java.util.zip.*;
 import java.io.*;
 import java.awt.*;
@@ -47,14 +48,16 @@ import org.jpc.emulator.memory.codeblock.*;
 import org.jpc.emulator.peripheral.*;
 import org.jpc.emulator.pci.peripheral.*;
 
+import sun.misc.Resource;
+
 public class PCMonitor extends KeyHandlingPanel implements GraphicsDisplay
 {
     public static final int WIDTH = 720;
     public static final int HEIGHT = 400;
 
     private PC pc;
-    private Keyboard keyboard;
-    private VGACard vgaCard;
+    private UserInputDevice keyboard;
+    private VideoCard vgaCard;
 
     private BufferedImage buffer;
     private int[] rawImageData;
@@ -321,7 +324,8 @@ public class PCMonitor extends KeyHandlingPanel implements GraphicsDisplay
         if (args.length == 0)
 	    args = new String[] { "-fda", "mem:floppy.img", "-hda", "mem:dosgames.img", "-boot", "fda" };
         
-        PC pc = PC.createPC(args, new VirtualClock()); 
+        PC pc = OxfordPC.createPC(args, new VirtualClock()); 
         PCMonitorFrame frame = PCMonitorFrame.createMonitor("JPC Monitor", pc, args);
+        
     }
 }

@@ -61,7 +61,7 @@ public class CodeBlockManager
             if (sm != null)
                 sm.checkCreateClassLoader();
             System.out.println("Security Manager allows creation of classloader: attempting to use advanced compilers.");
-            bgc = new BackgroundCompiler(new OptimisedCompiler(), new FASTCompiler());
+            bgc = new BackgroundCompiler(new OptimisedCompiler(), new OptimisedCompiler());//FASTCompiler());
             compilingRealModeChain = new DefaultCodeBlockFactory(new RealModeUDecoder(), bgc);
             compilingProtectedModeChain = new DefaultCodeBlockFactory(new ProtectedModeUDecoder(), bgc);
         } 

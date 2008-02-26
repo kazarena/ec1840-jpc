@@ -450,7 +450,7 @@ public class JPCApplication extends PCMonitorFrame
         if (args.length == 0)
             args = defaultArgs;
         
-        PC pc = PC.createPC(args, new VirtualClock()); 
+        PC pc = OxfordPC.createPC(args, new VirtualClock()); 
         JPCApplication app = new JPCApplication(args, pc);
         
         app.setBounds(100, 100, WIDTH+20, HEIGHT+70);

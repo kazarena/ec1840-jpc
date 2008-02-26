@@ -91,9 +91,13 @@ public class RTC extends AbstractHardwareComponent implements IOPortCapable
     private boolean ioportRegistered;
     private boolean drivesInited;
     private boolean floppiesInited;
+    
+    private int memorySize;
 
-    public RTC(int ioPort, int irq)
+    public RTC(int ioPort, int irq, int memorySize)
     {
+    	this.memorySize = memorySize;
+    	
         bootType = -1;
 	ioportRegistered = false;
 	drivesInited = false;
@@ -184,7 +188,7 @@ public class RTC extends AbstractHardwareComponent implements IOPortCapable
 	cmosData[0x15] = (byte)val;
 	cmosData[0x16] = (byte)(val >>> 8);
 	
-	int ramSize = PC.SYS_RAM_SIZE;
+	int ramSize = memorySize;
 	val = (ramSize / 1024) - 1024;
 	if (val > 65535) val = 65535;
 	cmosData[0x17] = (byte)val;

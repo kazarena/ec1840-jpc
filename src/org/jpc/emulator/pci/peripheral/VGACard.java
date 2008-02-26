@@ -36,7 +36,7 @@ import org.jpc.emulator.*;
 import java.util.*;
 import java.io.*;
 
-public class VGACard extends AbstractPCIDevice implements IOPortCapable, HardwareComponent
+public class VGACard extends AbstractPCIDevice implements VideoCard, IOPortCapable, HardwareComponent
 {
     //VGA_RAM_SIZE must be a power of two
     private static final int VGA_RAM_SIZE = 4096 * 1024;

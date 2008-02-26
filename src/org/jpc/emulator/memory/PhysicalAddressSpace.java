@@ -27,6 +27,7 @@
 package org.jpc.emulator.memory;
 
 import java.util.*;
+import java.util.logging.Logger;
 import java.io.*;
 
 import org.jpc.emulator.*;
@@ -35,9 +36,10 @@ import org.jpc.emulator.processor.Processor;
 
 public final class PhysicalAddressSpace extends AddressSpace implements HardwareComponent
 {
+	Logger logger = Logger.getLogger("PhysicalAddressSpace");
     private static final int GATEA20_MASK = 0xffefffff;
 
-    private static final int QUICK_INDEX_SIZE = PC.SYS_RAM_SIZE >>> INDEX_SHIFT;
+    private static int QUICK_INDEX_SIZE;
 
     private static final int TOP_INDEX_BITS = (32 - INDEX_SHIFT) / 2;
     private static final int BOTTOM_INDEX_BITS = 32 - INDEX_SHIFT - TOP_INDEX_BITS;
@@ -59,9 +61,15 @@ public final class PhysicalAddressSpace extends AddressSpace implements Hardware
     public static final Memory UNCONNECTED = new UnconnectedMemoryBlock();
     
     private LinearAddressSpace linearAddr;
+    
+    private int sysRamSize;
 
-    public PhysicalAddressSpace()
+    public PhysicalAddressSpace(int sysRamSize)
     {
+    	this.sysRamSize = sysRamSize;
+    	
+    	QUICK_INDEX_SIZE = this.sysRamSize >>> INDEX_SHIFT;
+    	
         mappedRegionCount = 0;
 
 	quickNonA20MaskedIndex = new Memory[QUICK_INDEX_SIZE];
@@ -179,7 +187,7 @@ public final class PhysicalAddressSpace extends AddressSpace implements Hardware
         clearArray(quickNonA20MaskedIndex, UNCONNECTED);
         clearArray(quickIndex, UNCONNECTED);
         reset();
-        for (int i=0; i<PC.SYS_RAM_SIZE; i+= AddressSpace.BLOCK_SIZE)
+        for (int i=0; i<sysRamSize; i+= AddressSpace.BLOCK_SIZE)
             allocateMemory(i, new LazyMemory(AddressSpace.BLOCK_SIZE));
         gateA20MaskState = input.readBoolean();
         mappedRegionCount = input.readInt();
@@ -240,6 +248,7 @@ public final class PhysicalAddressSpace extends AddressSpace implements Hardware
 
     public int execute(Processor cpu, int offset)
     {
+    	//logger.info("Executing "+Integer.toHexString(cpu.cs.getBase())+":"+Integer.toHexString(offset));
 	return getReadMemoryBlockAt(offset).execute(cpu, offset & AddressSpace.BLOCK_MASK);
     }
     

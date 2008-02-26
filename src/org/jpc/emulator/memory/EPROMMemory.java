@@ -26,8 +26,13 @@
 
 package org.jpc.emulator.memory;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class EPROMMemory extends LazyCodeBlockMemory
 {
+	Logger logger = Logger.getLogger("EPROMMemory");
+	
     public EPROMMemory(byte[] data)
     {
         this(data, 0, data.length);
@@ -46,17 +51,17 @@ public class EPROMMemory extends LazyCodeBlockMemory
 
     public void setByte(int offset, byte data)
     {
-	System.err.println("Tried to write to EPROM");
+    	//logger.log(Level.WARNING, "Tried to write to EPROM at "+Integer.toHexString(offset)+"h");
     }
 
     public void setWord(int offset, short data)
     {
-	System.err.println("Tried to write to EPROM");
+    	logger.log(Level.WARNING, "Tried to write to EPROM at "+Integer.toHexString(offset)+"h");
     }
 
     public void setDoubleWord(int offset, int data)
     {
-	System.err.println("Tried to write to EPROM");
+    	logger.log(Level.WARNING, "Tried to write to EPROM at "+Integer.toHexString(offset)+"h");
     }
 
     public void copyContentsFrom(int address, byte[] buf, int off, int len) {}
