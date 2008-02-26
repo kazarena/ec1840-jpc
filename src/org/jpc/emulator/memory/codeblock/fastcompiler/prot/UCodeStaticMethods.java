@@ -26,8 +26,10 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler.prot;
 
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
+import org.jpc.emulator.motherboard.IOPortHandler;
+import org.jpc.emulator.processor.Processor;
+import org.jpc.emulator.processor.ProcessorException;
+import org.jpc.emulator.processor.Segment;
 
 public class UCodeStaticMethods
 {

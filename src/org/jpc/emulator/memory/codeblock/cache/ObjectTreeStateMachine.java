@@ -26,8 +26,8 @@
 
 package org.jpc.emulator.memory.codeblock.cache;
 
-import java.util.*;
-import org.jpc.emulator.memory.*;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
 
 /**

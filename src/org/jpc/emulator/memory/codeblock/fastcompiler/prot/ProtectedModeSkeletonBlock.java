@@ -26,7 +26,7 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler.prot;
 
-import org.jpc.emulator.processor.*;
+import org.jpc.emulator.processor.Processor;
 
 public class ProtectedModeSkeletonBlock extends ProtectedModeTemplateBlock
 {

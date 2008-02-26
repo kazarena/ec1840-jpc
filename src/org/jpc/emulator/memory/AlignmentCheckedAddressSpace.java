@@ -26,8 +26,9 @@
 
 package org.jpc.emulator.memory;
 
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.processor.*;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.processor.Processor;
+import org.jpc.emulator.processor.ProcessorException;
 
 public class AlignmentCheckedAddressSpace extends AddressSpace
 {

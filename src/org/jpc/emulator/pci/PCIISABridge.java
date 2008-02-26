@@ -26,9 +26,12 @@
 
 package org.jpc.emulator.pci;
 
-import org.jpc.emulator.motherboard.InterruptController;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
 import org.jpc.emulator.HardwareComponent;
-import java.io.*;
+import org.jpc.emulator.motherboard.InterruptController;
 
 /** 
  * Intel 82371SB PIIX3 PCI ISA Bridge emulation.

@@ -26,7 +26,8 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler;
     
-import java.io.*;
+import java.io.IOException;
+import java.io.OutputStream;
 
 public class CountingOutputStream extends OutputStream
 {

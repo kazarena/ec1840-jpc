@@ -27,22 +27,20 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.lang.reflect.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.lang.reflect.Field;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.ButtonGroup;
+import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 
-import org.jpc.emulator.*;
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.memory.*;
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.LinearAddressSpace;
+import org.jpc.emulator.memory.Memory;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
+import org.jpc.emulator.processor.Processor;
 
 public class LinearMemoryViewer extends MemoryViewer implements ActionListener
 {

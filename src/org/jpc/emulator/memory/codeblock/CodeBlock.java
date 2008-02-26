@@ -27,7 +27,7 @@
 
 package org.jpc.emulator.memory.codeblock;
 
-import org.jpc.emulator.processor.*;
+import org.jpc.emulator.processor.Processor;
 
 public interface CodeBlock
 {

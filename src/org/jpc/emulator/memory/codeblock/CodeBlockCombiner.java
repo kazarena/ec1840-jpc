@@ -26,8 +26,10 @@
 
 package org.jpc.emulator.memory.codeblock;
 
-import org.jpc.emulator.memory.codeblock.optimised.*;
-import org.jpc.emulator.memory.*;
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.Memory;
+import org.jpc.emulator.memory.codeblock.optimised.MicrocodeSet;
+import org.jpc.emulator.memory.codeblock.optimised.RealModeUDecoder;
 
 public class CodeBlockCombiner
 {

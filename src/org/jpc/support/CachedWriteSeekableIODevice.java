@@ -26,8 +26,8 @@
 
 package org.jpc.support;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.Hashtable;
 
 public class CachedWriteSeekableIODevice implements SeekableIODevice
 {

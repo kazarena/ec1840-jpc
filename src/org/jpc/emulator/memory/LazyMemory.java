@@ -26,8 +26,8 @@
 
 package org.jpc.emulator.memory;
 
-import org.jpc.emulator.processor.Processor;
 import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.processor.Processor;
 
 public class LazyMemory extends AbstractMemory 
 {

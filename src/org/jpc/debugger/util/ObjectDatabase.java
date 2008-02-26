@@ -27,7 +27,8 @@
 
 package org.jpc.debugger.util;
 
-import java.util.*;
+import java.util.Hashtable;
+import java.util.Vector;
 
 public class ObjectDatabase
 {

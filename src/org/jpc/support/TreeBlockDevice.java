@@ -26,9 +26,22 @@
 
 package org.jpc.support;
 
-import java.io.*;
-import java.util.regex.*; //this is used to extract filenames for directory entries
-import java.util.*;
+import java.io.BufferedOutputStream;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Comparator;
+import java.util.GregorianCalendar;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.Vector;
 
 
 public class TreeBlockDevice implements BlockDevice

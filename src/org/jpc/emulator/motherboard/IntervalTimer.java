@@ -26,9 +26,13 @@
 
 package org.jpc.emulator.motherboard;
 
-import org.jpc.support.*;
-import org.jpc.emulator.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.Timer;
+import org.jpc.support.Clock;
 
 /**
  * i8254 Interval Timer emulation.

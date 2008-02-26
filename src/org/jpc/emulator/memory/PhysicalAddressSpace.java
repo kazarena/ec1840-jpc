@@ -26,12 +26,13 @@
 
 package org.jpc.emulator.memory;
 
-import java.util.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import java.util.logging.Logger;
-import java.io.*;
 
-import org.jpc.emulator.*;
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
 import org.jpc.emulator.processor.Processor;
 
 public final class PhysicalAddressSpace extends AddressSpace implements HardwareComponent

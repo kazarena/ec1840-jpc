@@ -26,7 +26,14 @@
 
 package org.jpc.emulator.memory.codeblock.cache;
 
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.codeblock.ByteSource;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.memory.codeblock.CodeBlockCompiler;
+import org.jpc.emulator.memory.codeblock.CodeBlockFactory;
+import org.jpc.emulator.memory.codeblock.Decoder;
+import org.jpc.emulator.memory.codeblock.ProtectedModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.RealModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.Virtual8086ModeCodeBlock;
 
 public class CachedByteCodeBlockFactory implements CodeBlockFactory, ByteSource, ObjectTreeCache
 {

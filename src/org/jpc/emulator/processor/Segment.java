@@ -27,9 +27,11 @@
 
 package org.jpc.emulator.processor;
 
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.*;
-import java.io.*;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.Hibernatable;
+import org.jpc.emulator.memory.AddressSpace;
 
 public abstract class Segment implements Hibernatable
 {

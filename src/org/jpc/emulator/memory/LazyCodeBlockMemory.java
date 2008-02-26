@@ -26,7 +26,13 @@
 
 package org.jpc.emulator.memory;
 
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.codeblock.BlankCodeBlock;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.memory.codeblock.CodeBlockManager;
+import org.jpc.emulator.memory.codeblock.CodeBlockReplacementException;
+import org.jpc.emulator.memory.codeblock.ProtectedModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.RealModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.Virtual8086ModeCodeBlock;
 import org.jpc.emulator.processor.Processor;
 import org.jpc.emulator.processor.ProcessorException;
 

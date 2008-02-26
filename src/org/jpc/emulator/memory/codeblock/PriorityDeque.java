@@ -26,7 +26,14 @@
 
 package org.jpc.emulator.memory.codeblock;
 
-import java.util.*;
+import java.util.AbstractQueue;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.Iterator;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Random;
 
 public class PriorityDeque extends AbstractQueue implements Deque
 {

@@ -26,8 +26,11 @@
 
 package org.jpc.emulator.motherboard;
 
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
 import org.jpc.emulator.HardwareComponent;
-import java.io.*;
 
 /**
  * Class for storing the I/O port map, and handling the required redirection.

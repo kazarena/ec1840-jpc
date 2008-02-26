@@ -26,11 +26,14 @@
 
 package org.jpc.emulator.pci;
 
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.pci.peripheral.*;
-import org.jpc.emulator.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
+import org.jpc.emulator.motherboard.IOPortHandler;
+import org.jpc.emulator.pci.peripheral.VGACard;
 
 public class PCIBus implements HardwareComponent
 {

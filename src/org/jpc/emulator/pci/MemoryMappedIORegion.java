@@ -26,8 +26,7 @@
 
 package org.jpc.emulator.pci;
 
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
+import org.jpc.emulator.memory.AbstractMemory;
 
 public abstract class MemoryMappedIORegion extends AbstractMemory implements IORegion
 {

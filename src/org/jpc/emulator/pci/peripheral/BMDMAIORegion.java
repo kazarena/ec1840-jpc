@@ -26,9 +26,12 @@
 
 package org.jpc.emulator.pci.peripheral;
 
-import org.jpc.emulator.pci.*;
-import org.jpc.emulator.memory.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.memory.Memory;
+import org.jpc.emulator.pci.IOPortIORegion;
 
 public class BMDMAIORegion implements IOPortIORegion
 {

@@ -26,9 +26,6 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler.real;
 
-import java.util.*;
-import java.io.*;
-
 import org.jpc.emulator.memory.codeblock.fastcompiler.BytecodeFragments;
 import org.jpc.emulator.memory.codeblock.fastcompiler.FASTCompiler;
 

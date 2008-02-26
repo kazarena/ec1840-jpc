@@ -26,9 +26,14 @@
 
 package org.jpc.emulator.peripheral;
 
-import org.jpc.emulator.motherboard.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
 import org.jpc.emulator.HardwareComponent;
-import java.io.*;
+import org.jpc.emulator.motherboard.IOPortCapable;
+import org.jpc.emulator.motherboard.IOPortHandler;
+import org.jpc.emulator.motherboard.InterruptController;
 
 /**
  * Emulates a standard 16450 UART.

@@ -27,25 +27,17 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.util.zip.*;
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Dimension;
+import java.io.File;
+import java.io.IOException;
+import java.util.zip.ZipOutputStream;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.*;
-import org.jpc.support.*;
-import org.jpc.j2se.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
+import org.jpc.debugger.util.UtilityFrame;
+import org.jpc.emulator.PC;
+import org.jpc.j2se.PCMonitor;
 
 public class PCMonitorFrame extends UtilityFrame implements PCListener
 {

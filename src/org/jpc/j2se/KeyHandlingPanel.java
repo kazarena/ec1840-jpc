@@ -27,12 +27,29 @@
 
 package org.jpc.j2se;
 
-import java.util.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.Dimension;
+import java.awt.KeyboardFocusManager;
+import java.awt.LayoutManager;
+import java.awt.Point;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 
-import javax.swing.*;
-import javax.swing.event.*;
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
 
 public class KeyHandlingPanel extends JPanel implements KeyListener, FocusListener, MouseListener, MouseMotionListener, MouseWheelListener
 {

@@ -26,17 +26,22 @@
 
 package org.jpc.j2se;
 
-import java.util.*;
-import java.io.*;
-import java.text.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.security.*;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.security.AccessControlException;
+import java.text.DecimalFormat;
 
-import javax.swing.*;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JProgressBar;
+import javax.swing.JScrollPane;
 
-import org.jpc.emulator.*;
-import org.jpc.support.*;
+import org.jpc.emulator.PC;
+import org.jpc.support.ArgProcessor;
 
 public class PCMonitorFrame extends JFrame implements ActionListener, Runnable
 {

@@ -26,7 +26,8 @@
 
 package org.jpc.support;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 
 public class FileBackedSeekableIODevice implements SeekableIODevice
 {

@@ -27,12 +27,14 @@
 package org.jpc.emulator.memory.codeblock.optimised;
 
 import java.util.List;
-import java.util.logging.Logger;
 
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.processor.fpu64.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.codeblock.ArrayBackedInstructionSource;
+import org.jpc.emulator.memory.codeblock.InstructionSource;
+import org.jpc.emulator.memory.codeblock.RealModeCodeBlock;
+import org.jpc.emulator.processor.Processor;
+import org.jpc.emulator.processor.ProcessorException;
+import org.jpc.emulator.processor.Segment;
+import org.jpc.emulator.processor.fpu64.FpuState;
 import org.jpc.test.Checkpoint;
 import org.jpc.test.CheckpointProcessor;
 

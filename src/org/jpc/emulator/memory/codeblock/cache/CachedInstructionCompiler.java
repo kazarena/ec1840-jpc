@@ -26,10 +26,12 @@
 
 package org.jpc.emulator.memory.codeblock.cache;
 
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.memory.codeblock.optimised.*;
-import org.jpc.emulator.processor.*;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.memory.codeblock.CodeBlockCompiler;
+import org.jpc.emulator.memory.codeblock.InstructionSource;
+import org.jpc.emulator.memory.codeblock.ProtectedModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.RealModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.Virtual8086ModeCodeBlock;
 
 public class CachedInstructionCompiler implements CodeBlockCompiler, InstructionSource, ObjectTreeCache
 {

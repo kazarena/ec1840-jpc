@@ -27,8 +27,9 @@
 
 package org.jpc.debugger.bce;
 
-import java.util.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.IOException;
+import java.util.Vector;
 
 public class ConstantPool
 {

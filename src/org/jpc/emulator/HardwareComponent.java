@@ -26,7 +26,9 @@
 
 package org.jpc.emulator;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
 public interface HardwareComponent extends Hibernatable
 {

@@ -26,13 +26,9 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler;
 
-import java.lang.reflect.*;
-import java.util.*;
-import java.io.*;
-
+import org.jpc.classfile.JavaOpcode;
+import org.jpc.emulator.memory.codeblock.optimised.MicrocodeSet;
 import org.jpc.emulator.processor.Processor;
-import org.jpc.emulator.memory.codeblock.optimised.*;
-import org.jpc.classfile.*;
 
 public class BytecodeFragments implements MicrocodeSet
 {

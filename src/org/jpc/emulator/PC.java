@@ -28,21 +28,17 @@ package org.jpc.emulator;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.zip.ZipOutputStream;
 
 import org.jpc.emulator.memory.LinearAddressSpace;
 import org.jpc.emulator.memory.PhysicalAddressSpace;
 import org.jpc.emulator.memory.codeblock.CodeBlock;
-import org.jpc.emulator.pci.peripheral.VGACard;
 import org.jpc.emulator.pci.peripheral.VideoCard;
-import org.jpc.emulator.peripheral.Keyboard;
 import org.jpc.emulator.peripheral.UserInputDevice;
 import org.jpc.emulator.processor.Processor;
 import org.jpc.support.BlockDevice;
 import org.jpc.support.Clock;
 import org.jpc.support.DriveSet;
-import org.jpc.test.Checkpoint;
 
 /**
  * The main parent class for JPC.

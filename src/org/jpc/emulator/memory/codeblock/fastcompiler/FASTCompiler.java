@@ -26,15 +26,32 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler;
 
-import java.io.*;
-import java.util.*;
+import java.io.ByteArrayOutputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
+import org.jpc.classfile.AttributeInfo;
+import org.jpc.classfile.ClassFile;
+import org.jpc.classfile.JavaOpcode;
+import org.jpc.emulator.memory.codeblock.CodeBlockCompiler;
+import org.jpc.emulator.memory.codeblock.InstructionSource;
+import org.jpc.emulator.memory.codeblock.ProtectedModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.RealModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.Virtual8086ModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.fastcompiler.prot.ProtectedModeBytecodeFragments;
+import org.jpc.emulator.memory.codeblock.fastcompiler.prot.ProtectedModeExceptionHandler;
+import org.jpc.emulator.memory.codeblock.fastcompiler.prot.ProtectedModeRPNNode;
+import org.jpc.emulator.memory.codeblock.fastcompiler.real.RealModeBytecodeFragments;
+import org.jpc.emulator.memory.codeblock.fastcompiler.real.RealModeExceptionHandler;
+import org.jpc.emulator.memory.codeblock.fastcompiler.real.RealModeRPNNode;
 import org.jpc.emulator.processor.ProcessorException;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.classfile.*;
-
-import org.jpc.emulator.memory.codeblock.fastcompiler.real.*;
-import org.jpc.emulator.memory.codeblock.fastcompiler.prot.*;
 
 public class FASTCompiler implements CodeBlockCompiler {
 	public static final int PROCESSOR_ELEMENT_EAX = 0;

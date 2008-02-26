@@ -26,12 +26,20 @@
 
 package org.jpc.debugger.bce;
 
-import java.io.*;
-import java.awt.*;
-import javax.swing.*;
+import java.awt.Font;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 
-import org.jpc.debugger.util.*;
-import org.jpc.debugger.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
+import org.jpc.debugger.util.ApplicationFrame;
+import org.jpc.debugger.util.BasicTableModel;
 
 public class ClassFileViewer extends ApplicationFrame 
 {

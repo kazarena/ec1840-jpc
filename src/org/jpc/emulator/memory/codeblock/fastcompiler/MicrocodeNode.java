@@ -26,11 +26,11 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler;
 
-import java.lang.reflect.*;
-import java.util.*;
+import java.lang.reflect.Field;
+import java.util.Vector;
 
-import org.jpc.emulator.memory.codeblock.optimised.*;
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.codeblock.InstructionSource;
+import org.jpc.emulator.memory.codeblock.optimised.MicrocodeSet;
 
 public class MicrocodeNode implements MicrocodeSet
 {

@@ -26,10 +26,6 @@
 
 package org.jpc.emulator.memory;
 
-import java.util.*;
-
-import org.jpc.emulator.*;
-import org.jpc.emulator.memory.codeblock.*;
 
 
 public abstract class AddressSpace extends AbstractMemory

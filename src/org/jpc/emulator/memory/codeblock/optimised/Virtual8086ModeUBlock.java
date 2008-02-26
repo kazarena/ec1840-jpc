@@ -26,10 +26,14 @@
 
 package org.jpc.emulator.memory.codeblock.optimised;
 
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.processor.fpu64.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.codeblock.ArrayBackedInstructionSource;
+import org.jpc.emulator.memory.codeblock.InstructionSource;
+import org.jpc.emulator.memory.codeblock.Virtual8086ModeCodeBlock;
+import org.jpc.emulator.processor.Processor;
+import org.jpc.emulator.processor.ProcessorException;
+import org.jpc.emulator.processor.Segment;
+import org.jpc.emulator.processor.SegmentFactory;
+import org.jpc.emulator.processor.fpu64.FpuState;
 
 public class Virtual8086ModeUBlock implements Virtual8086ModeCodeBlock, MicrocodeSet
 {

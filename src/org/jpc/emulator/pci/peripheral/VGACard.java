@@ -26,15 +26,23 @@
 
 package org.jpc.emulator.pci.peripheral;
 
-import org.jpc.emulator.pci.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.memory.Memory;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.motherboard.IOPortCapable;
+import org.jpc.emulator.motherboard.IOPortHandler;
+import org.jpc.emulator.pci.AbstractPCIDevice;
+import org.jpc.emulator.pci.ByteBuffer;
+import org.jpc.emulator.pci.IORegion;
+import org.jpc.emulator.pci.MemoryMappedIORegion;
+import org.jpc.emulator.pci.PCIBus;
 import org.jpc.emulator.processor.Processor;
-import org.jpc.support.*;
-import org.jpc.emulator.*;
-import java.util.*;
-import java.io.*;
+import org.jpc.support.GraphicsDisplay;
 
 public class VGACard extends AbstractPCIDevice implements VideoCard, IOPortCapable, HardwareComponent
 {

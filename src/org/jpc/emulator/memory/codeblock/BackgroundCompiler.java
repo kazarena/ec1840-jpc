@@ -26,12 +26,9 @@
 
 package org.jpc.emulator.memory.codeblock;
 
-import java.util.*;
-
-import org.jpc.emulator.memory.codeblock.optimised.*;
-import org.jpc.emulator.memory.codeblock.fastcompiler.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.processor.*;
+import org.jpc.emulator.memory.codeblock.optimised.ProtectedModeUBlock;
+import org.jpc.emulator.memory.codeblock.optimised.RealModeUBlock;
+import org.jpc.emulator.processor.Processor;
 
 public class BackgroundCompiler implements CodeBlockCompiler
 {

@@ -28,8 +28,12 @@
 package org.jpc.emulator.processor.fpu64;
 
 // import java.math.BigDecimal;
-import org.jpc.emulator.processor.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.processor.Processor;
+import org.jpc.emulator.processor.ProcessorException;
 
 public class FpuState64 extends FpuState
 {

@@ -26,7 +26,9 @@
 
 package org.jpc.emulator.memory.codeblock.optimised;
 
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.codeblock.ByteSource;
+import org.jpc.emulator.memory.codeblock.Decoder;
+import org.jpc.emulator.memory.codeblock.InstructionSource;
 
 public final class ProtectedModeUDecoder implements MicrocodeSet, Decoder, InstructionSource
 {

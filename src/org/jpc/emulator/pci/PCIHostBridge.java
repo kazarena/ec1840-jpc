@@ -26,12 +26,13 @@
 
 package org.jpc.emulator.pci;
 
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.pci.peripheral.*;
-import org.jpc.support.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
 import org.jpc.emulator.HardwareComponent;
-import java.io.*;
+import org.jpc.emulator.motherboard.IOPortCapable;
+import org.jpc.emulator.motherboard.IOPortHandler;
 
 /**
  * Intel i440FX PCI Host Bridge emulation.

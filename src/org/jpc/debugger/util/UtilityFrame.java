@@ -26,17 +26,24 @@
 
 package org.jpc.debugger.util;
 
-import java.awt.*;
-import java.awt.image.*;
-import java.beans.*;
-import java.awt.geom.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.*;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Frame;
+import java.awt.Point;
+import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
-import java.util.*;
-import java.io.*;
-import java.text.*;
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+import javax.swing.event.InternalFrameEvent;
+import javax.swing.event.InternalFrameListener;
 
 public class UtilityFrame extends JInternalFrame implements PropertyChangeListener, InternalFrameListener
 {

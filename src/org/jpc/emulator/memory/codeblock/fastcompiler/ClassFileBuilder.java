@@ -26,14 +26,18 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler;
 
-import java.io.*;
-import java.util.*;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Hashtable;
 
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.classfile.*;
-
-import org.jpc.emulator.memory.codeblock.fastcompiler.real.RealModeSkeletonBlock;
+import org.jpc.classfile.ClassFile;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
 import org.jpc.emulator.memory.codeblock.fastcompiler.prot.ProtectedModeSkeletonBlock;
+import org.jpc.emulator.memory.codeblock.fastcompiler.real.RealModeSkeletonBlock;
 
 public class ClassFileBuilder
 {

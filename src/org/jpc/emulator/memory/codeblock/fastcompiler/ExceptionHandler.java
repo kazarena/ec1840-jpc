@@ -26,11 +26,12 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
 
-import org.jpc.classfile.*;
-import org.jpc.emulator.processor.*;
+import org.jpc.classfile.ClassFile;
+import org.jpc.classfile.JavaOpcode;
 
 public abstract class ExceptionHandler
 {

@@ -26,14 +26,17 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler.prot;
 
-import java.lang.reflect.*;
-import java.util.*;
-import java.io.*;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
+import java.util.Enumeration;
+import java.util.Hashtable;
+import java.util.Vector;
 
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.memory.codeblock.optimised.*;
-import org.jpc.classfile.*;
-import org.jpc.emulator.memory.codeblock.fastcompiler.*;
+import org.jpc.classfile.JavaOpcode;
+import org.jpc.emulator.memory.codeblock.fastcompiler.ConstantPoolSymbol;
+import org.jpc.emulator.memory.codeblock.fastcompiler.FASTCompiler;
+import org.jpc.emulator.memory.codeblock.optimised.MicrocodeSet;
 
 public class UCodeMethodParser implements MicrocodeSet
 {

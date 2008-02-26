@@ -26,8 +26,10 @@
 
 package org.jpc.debugger.util;
 
-import javax.swing.*;
-import javax.swing.table.*;
+import javax.swing.JTable;
+import javax.swing.table.AbstractTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
 
 public abstract class BasicTableModel extends AbstractTableModel
 {

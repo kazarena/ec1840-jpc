@@ -26,18 +26,41 @@
 
 package org.jpc.j2se;
 
-import java.util.*;
-import java.util.jar.*;
-import java.net.*;
-import java.awt.*;
-import java.io.*;
-import javax.swing.*;
-import javax.swing.border.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Container;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FilterInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.JarURLConnection;
+import java.net.URL;
+import java.net.URLClassLoader;
+import java.util.Enumeration;
+import java.util.Vector;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
-import org.jpc.support.*;
-import org.jpc.emulator.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.processor.*;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JApplet;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.border.Border;
+import javax.swing.border.TitledBorder;
+
+import org.jpc.emulator.OxfordPC;
+import org.jpc.emulator.PC;
+import org.jpc.support.ArrayBackedSeekableIODevice;
+import org.jpc.support.FileBackedSeekableIODevice;
+import org.jpc.support.KeyTypingPanel;
+import org.jpc.support.RawBlockDevice;
 
 public class JPCApplet extends JApplet
 {

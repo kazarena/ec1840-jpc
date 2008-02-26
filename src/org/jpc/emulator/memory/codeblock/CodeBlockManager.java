@@ -26,9 +26,12 @@
 
 package org.jpc.emulator.memory.codeblock;
 
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.optimised.*;
-import org.jpc.emulator.memory.codeblock.fastcompiler.*;
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.LazyCodeBlockMemory;
+import org.jpc.emulator.memory.Memory;
+import org.jpc.emulator.memory.codeblock.optimised.OptimisedCompiler;
+import org.jpc.emulator.memory.codeblock.optimised.ProtectedModeUDecoder;
+import org.jpc.emulator.memory.codeblock.optimised.RealModeUDecoder;
 
 public class CodeBlockManager
 {

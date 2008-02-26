@@ -27,22 +27,34 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.lang.reflect.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Point;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.lang.reflect.Method;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.AbstractSpinnerModel;
+import javax.swing.BorderFactory;
+import javax.swing.JCheckBox;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTabbedPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import javax.swing.text.JTextComponent;
 
-import org.jpc.emulator.*;
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.memory.*;
+import org.jpc.debugger.util.UtilityFrame;
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.Memory;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
+import org.jpc.emulator.processor.Processor;
 
 public class MemoryViewer extends UtilityFrame implements PCListener
 {

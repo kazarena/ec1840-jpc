@@ -22,43 +22,38 @@
     Details (including contact information) can be found at: 
 
     www.physics.ox.ac.uk/jpc
-*/
+ */
 
 package org.jpc.emulator;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 
-public abstract class AbstractHardwareComponent implements HardwareComponent
-{
-    public boolean initialised()
-    {
-        return true;
-    }
+public abstract class AbstractHardwareComponent implements HardwareComponent {
+	public boolean initialised() {
+		return true;
+	}
 
-    public void acceptComponent(HardwareComponent component)
-    {
-    }
+	public void acceptComponent(HardwareComponent component) {
+	}
 
-    public boolean updated()
-    {
-        return true;
-    }
+	public boolean updated() {
+		return true;
+	}
 
-    public void updateComponent(HardwareComponent component)
-    {
-    }
+	public void updateComponent(HardwareComponent component) {
+	}
 
-    public void reset()
-    {
-    }
+	public void reset() {
+	}
 
-    public void dumpState(DataOutput output) throws IOException
-    {
-    }
+	public void dumpState(DataOutput output) throws IOException {
+	}
 
-    public void loadState(DataInput input) throws IOException
-    {
-    }
+	public void loadState(DataInput input) throws IOException {
+	}
 
-    public void timerCallback() {}
+	public void timerCallback() {
+	}
 }

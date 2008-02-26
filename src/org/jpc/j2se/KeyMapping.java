@@ -26,8 +26,8 @@
 
 package org.jpc.j2se;
 
-import java.util.*;
 import java.awt.event.KeyEvent;
+import java.util.Hashtable;
 
 public class KeyMapping
 {

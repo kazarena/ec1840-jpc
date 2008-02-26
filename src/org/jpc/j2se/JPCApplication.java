@@ -26,31 +26,37 @@
 
 package org.jpc.j2se;
 
-import java.util.*;
-import java.util.zip.*;
-import java.util.jar.*;
-import java.io.*;
-import java.beans.*;
-import java.awt.*;
-import java.text.*;
-import java.net.*;
-import java.awt.color.*;
-import java.awt.image.*;
-import java.awt.event.*;
 import java.awt.Desktop;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.util.jar.JarFile;
+import java.util.zip.ZipOutputStream;
 
-import javax.swing.*;
-import javax.swing.event.*;
+import javax.swing.JEditorPane;
+import javax.swing.JFileChooser;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.UIManager;
 
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.*;
-import org.jpc.support.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.peripheral.*;
-import org.jpc.emulator.pci.peripheral.*;
+import org.jpc.emulator.OxfordPC;
+import org.jpc.emulator.PC;
+import org.jpc.support.ArgProcessor;
+import org.jpc.support.BlockDevice;
+import org.jpc.support.DriveSet;
+import org.jpc.support.FileBackedSeekableIODevice;
+import org.jpc.support.KeyTypingPanel;
+import org.jpc.support.RawBlockDevice;
+import org.jpc.support.SeekableIODevice;
+import org.jpc.support.TreeBlockDevice;
 
   
 public class JPCApplication extends PCMonitorFrame

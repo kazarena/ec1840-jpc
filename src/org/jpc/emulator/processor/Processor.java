@@ -26,13 +26,23 @@
 
 package org.jpc.emulator.processor;
 
-import org.jpc.emulator.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.processor.fpu64.*;
-import org.jpc.support.*;
-import java.io.*;
-import java.util.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.memory.AlignmentCheckedAddressSpace;
+import org.jpc.emulator.memory.LinearAddressSpace;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
+import org.jpc.emulator.motherboard.IOPortHandler;
+import org.jpc.emulator.motherboard.InterruptController;
+import org.jpc.emulator.processor.fpu64.FpuState;
+import org.jpc.emulator.processor.fpu64.FpuState64;
+import org.jpc.support.Clock;
 
 public class Processor implements HardwareComponent
 {

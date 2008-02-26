@@ -26,7 +26,10 @@
 
 package org.jpc.support;
 
-import java.io.*;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class RemoteBlockDeviceImpl implements Runnable
 {

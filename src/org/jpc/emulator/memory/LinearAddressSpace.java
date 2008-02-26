@@ -26,12 +26,16 @@
 
 package org.jpc.emulator.memory;
 
-import java.util.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.util.Enumeration;
+import java.util.Hashtable;
 
-import org.jpc.emulator.*;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.processor.*;
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.processor.Processor;
+import org.jpc.emulator.processor.ProcessorException;
 
 public final class LinearAddressSpace extends AddressSpace implements HardwareComponent
 {

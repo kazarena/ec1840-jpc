@@ -27,8 +27,7 @@
 
 package org.jpc.emulator.memory.codeblock;
 
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.memory.*;
+import org.jpc.emulator.processor.Processor;
 
 public class BlankCodeBlock implements RealModeCodeBlock, ProtectedModeCodeBlock, Virtual8086ModeCodeBlock
 {

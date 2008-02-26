@@ -26,10 +26,16 @@
 
 package org.jpc.emulator.pci.peripheral;
 
-import org.jpc.emulator.pci.*;
-import org.jpc.support.EthernetOutput;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
 import org.jpc.emulator.motherboard.IOPortHandler;
-import java.io.*;
+import org.jpc.emulator.pci.AbstractPCIDevice;
+import org.jpc.emulator.pci.ByteBuffer;
+import org.jpc.emulator.pci.IOPortIORegion;
+import org.jpc.emulator.pci.IORegion;
+import org.jpc.support.EthernetOutput;
 
 public class EthernetCard extends AbstractPCIDevice
 {

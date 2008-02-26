@@ -26,7 +26,6 @@
 
 package org.jpc.classfile;
 
-import org.jpc.classfile.JavaOpcode;
 
 public class JavaCodeAnalyser
 {

@@ -26,7 +26,6 @@
 
 package org.jpc.emulator.memory.codeblock.cache;
 
-import java.util.*;
 
 public interface ObjectTreeVisitor
 {

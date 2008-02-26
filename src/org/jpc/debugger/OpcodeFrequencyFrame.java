@@ -26,25 +26,23 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.lang.reflect.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.memory.codeblock.optimised.*;
+import org.jpc.debugger.util.BasicTableModel;
+import org.jpc.debugger.util.UtilityFrame;
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.codeblock.AbstractCodeBlockWrapper;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.memory.codeblock.optimised.MicrocodeSet;
+import org.jpc.emulator.memory.codeblock.optimised.RealModeUBlock;
 
 public class OpcodeFrequencyFrame extends UtilityFrame implements PCListener, ActionListener, CodeBlockListener, Comparator
 {

@@ -26,8 +26,13 @@
 
 package org.jpc.emulator.processor;
 
-import org.jpc.emulator.memory.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.LinearAddressSpace;
+import org.jpc.emulator.memory.Memory;
 
 public class SegmentFactory
 {

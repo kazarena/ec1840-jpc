@@ -27,25 +27,26 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.lang.reflect.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Point;
+import java.awt.Polygon;
+import java.awt.Rectangle;
+import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.JTable;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.TableModel;
 
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.memory.codeblock.optimised.*;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.memory.codeblock.optimised.MicrocodeSet;
 
 public class MicrocodeOverlayTable extends JTable implements ListSelectionListener
 {

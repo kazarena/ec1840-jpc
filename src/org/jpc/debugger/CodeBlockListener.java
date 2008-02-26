@@ -26,14 +26,8 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-
-import org.jpc.emulator.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
 
 public interface CodeBlockListener
 {

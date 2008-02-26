@@ -27,7 +27,6 @@
 
 package org.jpc.emulator.processor;
 
-import org.jpc.emulator.memory.*;
 
 public class ModeSwitchException extends RuntimeException
 {

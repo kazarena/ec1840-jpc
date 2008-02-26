@@ -26,9 +26,14 @@
 
 package org.jpc.j2se;
 
-import org.jpc.emulator.*;
-import org.jpc.support.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.AbstractHardwareComponent;
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.Timer;
+import org.jpc.support.Clock;
 
 public class VirtualClock extends AbstractHardwareComponent implements Clock
 {

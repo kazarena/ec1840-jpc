@@ -26,8 +26,12 @@
 
 package org.jpc.emulator.pci;
 
-import org.jpc.emulator.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.AbstractHardwareComponent;
+import org.jpc.emulator.HardwareComponent;
     
 public abstract class AbstractPCIDevice extends AbstractHardwareComponent implements PCIDevice
 {

@@ -26,7 +26,6 @@
 
 package org.jpc.emulator.pci;
 
-import org.jpc.emulator.motherboard.*;
 
 public interface IORegion
 {

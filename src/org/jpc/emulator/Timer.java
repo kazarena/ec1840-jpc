@@ -26,8 +26,11 @@
 
 package org.jpc.emulator;
 
-import org.jpc.support.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.support.Clock;
 
 public class Timer implements ComparableObject
 {

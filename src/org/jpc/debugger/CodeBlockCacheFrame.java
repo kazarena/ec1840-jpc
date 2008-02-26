@@ -26,26 +26,25 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.lang.reflect.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
 
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.memory.codeblock.cache.*;
-import org.jpc.emulator.memory.codeblock.optimised.*;
+import org.jpc.debugger.util.BasicTableModel;
+import org.jpc.debugger.util.UtilityFrame;
+import org.jpc.emulator.PC;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.memory.codeblock.cache.ObjectTreeCache;
+import org.jpc.emulator.memory.codeblock.cache.ObjectTreeStateMachine;
+import org.jpc.emulator.memory.codeblock.cache.ObjectTreeStateMachineVisitor;
 
 public class CodeBlockCacheFrame extends UtilityFrame implements PCListener, ActionListener
 {

@@ -26,9 +26,13 @@
 
 package org.jpc.support;
 
-import java.io.*;
-//import java.nio.*; // This import is only needed for the ByteBuffer & ByteOrder stuff
-import java.util.regex.*; //this is used to extract filenames for directory entries
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.File;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class FileBlockDevice implements BlockDevice
 {

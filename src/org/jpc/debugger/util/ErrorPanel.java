@@ -26,9 +26,17 @@
 
 package org.jpc.debugger.util;
 
-import java.awt.*;
-import javax.swing.*;
-import javax.swing.tree.*;
+import java.awt.BorderLayout;
+
+import javax.swing.BorderFactory;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JTree;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.MutableTreeNode;
+import javax.swing.tree.TreeNode;
 
 public class ErrorPanel extends JPanel 
 {

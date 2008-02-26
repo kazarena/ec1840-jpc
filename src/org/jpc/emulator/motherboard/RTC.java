@@ -26,11 +26,18 @@
 
 package org.jpc.emulator.motherboard;
 
-import org.jpc.emulator.peripheral.*;
-import org.jpc.support.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
 import java.util.Calendar;
-import org.jpc.emulator.*;
-import java.io.*;
+
+import org.jpc.emulator.AbstractHardwareComponent;
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.Timer;
+import org.jpc.emulator.peripheral.FloppyController;
+import org.jpc.support.BlockDevice;
+import org.jpc.support.Clock;
+import org.jpc.support.DriveSet;
 
 /**
  * MC146818 RealTime Clock emulation

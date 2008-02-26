@@ -27,7 +27,10 @@
 
 package org.jpc.debugger.bce;
 
-import java.io.*;
+import java.io.ByteArrayInputStream;
+import java.io.DataInput;
+import java.io.DataInputStream;
+import java.io.IOException;
 
 public class Implementation
 {

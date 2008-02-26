@@ -26,10 +26,12 @@
 
 package org.jpc.debugger.util;
 
-import java.awt.*;
-import java.awt.geom.*;
-import javax.swing.*;
-import java.io.*;
+import java.awt.Component;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.geom.AffineTransform;
+
+import javax.swing.Icon;
 
 public class ScaledIcon implements Icon
 {

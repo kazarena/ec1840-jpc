@@ -26,8 +26,10 @@
 
 package org.jpc.j2se;
 
-import java.util.*;
-import org.jpc.emulator.*;
+import java.util.NoSuchElementException;
+import java.util.Vector;
+
+import org.jpc.emulator.ComparableObject;
 
 public class PriorityVector
 {

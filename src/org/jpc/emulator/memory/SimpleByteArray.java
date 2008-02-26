@@ -26,7 +26,6 @@
 
 package org.jpc.emulator.memory;
 
-import java.util.*;
 
 public class SimpleByteArray implements ByteArray
 {

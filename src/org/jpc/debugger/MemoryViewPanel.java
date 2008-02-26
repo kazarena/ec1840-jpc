@@ -27,22 +27,22 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
+import org.jpc.debugger.util.BasicTableModel;
+import org.jpc.debugger.util.ValidatingTextField;
+import org.jpc.emulator.memory.AddressSpace;
 
 public class MemoryViewPanel extends JPanel
 {

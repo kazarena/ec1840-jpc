@@ -27,20 +27,21 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Font;
 
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 
-import org.jpc.emulator.*;
-import org.jpc.debugger.util.*;
-import org.jpc.emulator.processor.*;
+import org.jpc.debugger.util.BasicTableModel;
+import org.jpc.debugger.util.UtilityFrame;
+import org.jpc.debugger.util.ValidatingTextField;
+import org.jpc.emulator.processor.Processor;
 
 public class ProcessorFrame extends UtilityFrame implements PCListener
 {

@@ -26,7 +26,7 @@
 
 package org.jpc.emulator.pci;
 
-import org.jpc.emulator.motherboard.*;
+import org.jpc.emulator.motherboard.IOPortCapable;
 
 public interface IOPortIORegion extends IOPortCapable, IORegion
 {

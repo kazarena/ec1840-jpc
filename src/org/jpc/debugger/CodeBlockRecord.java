@@ -26,15 +26,14 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
+import java.util.Arrays;
 
-import org.jpc.emulator.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.motherboard.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.emulator.memory.codeblock.*;
-import org.jpc.emulator.memory.codeblock.optimised.*;
+import org.jpc.emulator.PC;
+import org.jpc.emulator.memory.LinearAddressSpace;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.memory.codeblock.optimised.RealModeUBlock;
+import org.jpc.emulator.processor.Processor;
+import org.jpc.emulator.processor.ProcessorException;
 
 public class CodeBlockRecord
 {

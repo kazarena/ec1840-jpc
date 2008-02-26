@@ -26,7 +26,6 @@
 
 package org.jpc.support;
 
-import java.io.*;
 
 public class CDROMBlockDevice extends RawBlockDevice
 {

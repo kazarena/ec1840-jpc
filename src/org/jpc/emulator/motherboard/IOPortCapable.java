@@ -26,7 +26,7 @@
 
 package org.jpc.emulator.motherboard;
 
-import org.jpc.emulator.*;
+import org.jpc.emulator.HardwareComponent;
 
 public interface IOPortCapable extends HardwareComponent
 {

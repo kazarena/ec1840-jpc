@@ -26,7 +26,11 @@
 
 package org.jpc.emulator.memory.codeblock.optimised;
 
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.memory.codeblock.AbstractBasicCompiler;
+import org.jpc.emulator.memory.codeblock.InstructionSource;
+import org.jpc.emulator.memory.codeblock.ProtectedModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.RealModeCodeBlock;
+import org.jpc.emulator.memory.codeblock.Virtual8086ModeCodeBlock;
 
 
 public class OptimisedCompiler extends AbstractBasicCompiler

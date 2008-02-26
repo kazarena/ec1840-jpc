@@ -27,7 +27,8 @@
 
 package org.jpc.debugger.bce;
 
-import java.io.*;
+import java.io.DataInput;
+import java.io.IOException;
 
 public class Bytecode
 {

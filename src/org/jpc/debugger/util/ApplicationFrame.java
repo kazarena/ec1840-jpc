@@ -26,9 +26,23 @@
 
 package org.jpc.debugger.util;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.AWTEvent;
+import java.awt.Component;
+import java.awt.EventQueue;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Insets;
+import java.awt.Rectangle;
+import java.awt.Toolkit;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+import javax.swing.JDesktopPane;
+import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 public class ApplicationFrame extends JFrame
 {

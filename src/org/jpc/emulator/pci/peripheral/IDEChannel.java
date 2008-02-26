@@ -26,10 +26,13 @@
 
 package org.jpc.emulator.pci.peripheral;
 
-import org.jpc.emulator.motherboard.*;
-import org.jpc.support.*;
-import org.jpc.emulator.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.motherboard.IOPortCapable;
+import org.jpc.emulator.motherboard.InterruptController;
+import org.jpc.support.BlockDevice;
 
 public class IDEChannel implements IOPortCapable
 {

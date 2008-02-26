@@ -26,10 +26,14 @@
 
 package org.jpc.emulator.motherboard;
 
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.memory.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
 import org.jpc.emulator.HardwareComponent;
-import java.io.*;
+import org.jpc.emulator.memory.LinearAddressSpace;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
+import org.jpc.emulator.processor.Processor;
 
 public class GateA20Handler implements IOPortCapable, HardwareComponent
 {

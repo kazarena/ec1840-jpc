@@ -26,7 +26,7 @@
 
 package org.jpc.emulator.memory.codeblock;
 
-import org.jpc.emulator.memory.*;
+import org.jpc.emulator.memory.Memory;
 
 public class ByteSourceWrappedMemory implements ByteSource
 {

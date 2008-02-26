@@ -26,21 +26,25 @@
 
 package org.jpc.debugger;
 
-import java.util.*;
-import java.io.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
-import javax.swing.*;
-import javax.swing.event.*;
-import javax.swing.text.*;
-import javax.swing.undo.*;
+import javax.swing.ButtonGroup;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 
-import org.jpc.emulator.*;
-import org.jpc.emulator.processor.*;
-import org.jpc.emulator.memory.*;
-import org.jpc.support.*;
-import org.jpc.emulator.memory.codeblock.*;
+import org.jpc.emulator.PC;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
+import org.jpc.emulator.memory.codeblock.CodeBlock;
+import org.jpc.emulator.processor.Processor;
+import org.jpc.support.Clock;
 
 public class RunMenu extends JMenu implements ActionListener
 {

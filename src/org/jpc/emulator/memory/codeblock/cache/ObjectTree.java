@@ -26,14 +26,11 @@
 
 package org.jpc.emulator.memory.codeblock.cache;
 
-import java.util.*;
-import org.jpc.emulator.memory.*;
-//what size to switch between
-// -changing at about 8-16 element from narrow to wide seems to work
-// -this balances the number of wide nodes (more wides, much fewer narrows)
-//maybe just use a narrow array instead of hashmap??
-//better then HashMap
-// -have both a hashmap (NarrowNode) and explicit (OctalNode)
+import java.util.Enumeration;
+import java.util.Hashtable;
+
+import org.jpc.emulator.memory.ByteArray;
+import org.jpc.emulator.memory.SimpleByteArray;
 
 // RootNode -- array (0-256 children) (== to wide?)
 // BinaryNode -- two childs (0-2 children)

@@ -26,9 +26,17 @@
 
 package org.jpc.emulator.motherboard;
 
-import org.jpc.emulator.*;
-import org.jpc.emulator.memory.*;
-import java.io.*;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+import java.io.InputStream;
+
+import org.jpc.emulator.AbstractHardwareComponent;
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.memory.AddressSpace;
+import org.jpc.emulator.memory.EPROMMemory;
+import org.jpc.emulator.memory.PhysicalAddressSpace;
 
 public class VGABIOS extends AbstractHardwareComponent implements IOPortCapable
 {

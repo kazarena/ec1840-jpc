@@ -28,9 +28,11 @@ package org.jpc.support;
 
 // Do not event think about adding an import line to this class - especially not
 // import java.net.*!
-import org.jpc.emulator.*;
-import java.io.*;
-import org.jpc.support.ArgProcessor;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.AbstractHardwareComponent;
 
 public class DriveSet extends AbstractHardwareComponent {
 	public static final int FLOPPY_BOOT = 0;

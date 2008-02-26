@@ -28,7 +28,8 @@
 package org.jpc.debugger.util;
 
 import java.io.File;
-import javax.swing.filechooser.*;
+
+import javax.swing.filechooser.FileFilter;
 
 public class FileExtensionFilter extends FileFilter
 {

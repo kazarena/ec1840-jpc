@@ -26,7 +26,8 @@
 
 package org.jpc.support;
 
-import org.jpc.emulator.*;
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.Timer;
 
 public interface Clock extends HardwareComponent
 {

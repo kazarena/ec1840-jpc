@@ -26,10 +26,16 @@
 
 package org.jpc.emulator.peripheral;
 
-import org.jpc.emulator.motherboard.*;
-import org.jpc.support.*;
-import org.jpc.emulator.*;
-import java.io.*;
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+import org.jpc.emulator.AbstractHardwareComponent;
+import org.jpc.emulator.HardwareComponent;
+import org.jpc.emulator.motherboard.IOPortCapable;
+import org.jpc.emulator.motherboard.IOPortHandler;
+import org.jpc.emulator.motherboard.IntervalTimer;
+import org.jpc.support.Clock;
 
 public class PCSpeaker extends AbstractHardwareComponent implements IOPortCapable
 {

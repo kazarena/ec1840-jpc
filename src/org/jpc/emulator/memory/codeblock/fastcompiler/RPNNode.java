@@ -26,10 +26,13 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler;
 
-import java.io.*;
-import java.util.*;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Vector;
 
-import org.jpc.classfile.*;
+import org.jpc.classfile.ClassFile;
+import org.jpc.classfile.JavaOpcode;
 
 public abstract class RPNNode
 {

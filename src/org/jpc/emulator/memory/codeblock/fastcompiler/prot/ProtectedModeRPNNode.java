@@ -26,7 +26,8 @@
 
 package org.jpc.emulator.memory.codeblock.fastcompiler.prot;
 
-import org.jpc.emulator.memory.codeblock.fastcompiler.*;
+import org.jpc.emulator.memory.codeblock.fastcompiler.MicrocodeNode;
+import org.jpc.emulator.memory.codeblock.fastcompiler.RPNNode;
 
 public class ProtectedModeRPNNode extends RPNNode
 {
