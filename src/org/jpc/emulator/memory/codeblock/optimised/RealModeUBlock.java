@@ -143,7 +143,7 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 
 	private int uCodeXferReg0 = 0, uCodeXferReg1 = 0, uCodeXferReg2 = 0;
 	private boolean uCodeXferLoaded = false;
-	
+
 	private int currentIP;
 
 	private void fullExecute(Processor cpu) {
@@ -159,7 +159,9 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 		boolean eipUpdated = transferEipUpdated;
 		int position = transferPosition;
 
-		//currentIP = cpu.eip+(transferPosition>0?cumulativeX86Length[transferPosition-1]:0);
+		// cpu.processRealModeInterrupts();
+		// currentIP =
+		// cpu.eip+(transferPosition>0?cumulativeX86Length[transferPosition-1]:0);
 		try {
 			switch(microcodes[position++]) {
 			case EIP_UPDATE:
@@ -875,15 +877,18 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 				break;
 
 			case OUT_O8:
-				//Logger.getLogger("OUT_O8").info("OUT_O8 invoked at " + Integer.toHexString(currentIP));
+				// Logger.getLogger("OUT_O8").info("OUT_O8 invoked at " +
+				// Integer.toHexString(currentIP));
 				cpu.ioports.ioPortWriteByte(reg0, reg1);
 				break;
 			case OUT_O16:
-				//Logger.getLogger("OUT_O16").info("OUT_O16 invoked at " + Integer.toHexString(currentIP));
+				// Logger.getLogger("OUT_O16").info("OUT_O16 invoked at " +
+				// Integer.toHexString(currentIP));
 				cpu.ioports.ioPortWriteWord(reg0, reg1);
 				break;
 			case OUT_O32:
-				//Logger.getLogger("OUT_O32").info("OUT_O32 invoked at " + Integer.toHexString(currentIP));
+				// Logger.getLogger("OUT_O32").info("OUT_O32 invoked at " +
+				// Integer.toHexString(currentIP));
 				cpu.ioports.ioPortWriteLong(reg0, reg1);
 				break;
 
@@ -1192,11 +1197,13 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 				break;
 
 			case CLC:
-				//Logger.getLogger("CLC").info("CLC invoked at " + Integer.toHexString(cpu.eip));
+				// Logger.getLogger("CLC").info("CLC invoked at " +
+				// Integer.toHexString(cpu.eip));
 				cpu.setCarryFlag(false);
 				break;
 			case STC:
-				//Logger.getLogger("STC").info("STC invoked at " + Integer.toHexString(cpu.eip));
+				// Logger.getLogger("STC").info("STC invoked at " +
+				// Integer.toHexString(cpu.eip));
 				cpu.setCarryFlag(true);
 				break;
 			case CLI:
@@ -2446,8 +2453,11 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 
 		try {
 			while(position < microcodes.length) {
-				currentIP = cpu.eip+(position>0?cumulativeX86Length[position-1]:0);
+				currentIP = cpu.eip + (position > 0 ? cumulativeX86Length[position - 1] : 0);
 				CheckpointProcessor.processCheckpoints(cpu, currentIP);
+				if(cpu.fastProcessRealModeInterrupts()) {
+					return Math.max(cumulativeX86Length[position], 0);
+				}
 				if(uCodeXferLoaded) {
 					uCodeXferLoaded = false;
 					reg0 = uCodeXferReg0;
@@ -2809,18 +2819,19 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 				}
 					break;
 				}
+				// cpu.processRealModeInterrupts();
 			}
 		} catch(ProcessorException e) {
 			if(e.getVector() == -1)
 				throw new IllegalStateException("Execute Failed");
 
 			int nextPosition = position - 1; // this makes position point at
-												// the microcode that just
-												// barfed
+			// the microcode that just
+			// barfed
 
 			if(eipUpdated)
 				cpu.eip -= cumulativeX86Length[nextPosition]; // undo the
-																// eipUpdate
+			// eipUpdate
 
 			if(!e.pointsToSelf()) {
 				cpu.eip += cumulativeX86Length[nextPosition];
@@ -5129,8 +5140,8 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 			throw exceptionDE;
 
 		cpu.eax = (cpu.eax & ~0xffff) | (0xff & result) | ((0xff & remainder) << 8); // AH
-																						// is
-																						// remainder
+		// is
+		// remainder
 	}
 
 	private final void idiv_o16(short data) {
@@ -5146,7 +5157,7 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 
 		cpu.eax = (cpu.eax & ~0xffff) | (0xffff & result); // AX is result
 		cpu.edx = (cpu.edx & ~0xffff) | (0xffff & remainder); // DX is
-																// remainder
+		// remainder
 	}
 
 	private final void idiv_o32(int data) {
@@ -5331,7 +5342,8 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 	}
 
 	private final void lahf() {
-		//Logger.getLogger("LAHF").info("LAHF invoked at " + Integer.toHexString(cpu.eip));
+		// Logger.getLogger("LAHF").info("LAHF invoked at " +
+		// Integer.toHexString(cpu.eip));
 		int result = 0x0200;
 		if(cpu.getSignFlag())
 			result |= 0x8000;
@@ -5348,7 +5360,8 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 	}
 
 	private final void sahf() {
-		//Logger.getLogger("SAHF").info("SAHF invoked at " + Integer.toHexString(cpu.eip));
+		// Logger.getLogger("SAHF").info("SAHF invoked at " +
+		// Integer.toHexString(cpu.eip));
 		int ah = (cpu.eax & 0xff00);
 		cpu.setCarryFlag(0 != (ah & 0x0100));
 		cpu.setParityFlag(0 != (ah & 0x0400));
@@ -5952,8 +5965,8 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 		n -= i >>> 31;
 		return n;
 	}
-	
+
 	public void setCheckpoints(List<Checkpoint> checkpoints) {
-		
+
 	}
 }
