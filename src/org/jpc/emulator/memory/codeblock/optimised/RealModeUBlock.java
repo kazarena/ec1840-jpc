@@ -2455,9 +2455,12 @@ public class RealModeUBlock implements RealModeCodeBlock, MicrocodeSet {
 			while(position < microcodes.length) {
 				currentIP = cpu.eip + (position > 0 ? cumulativeX86Length[position - 1] : 0);
 				CheckpointProcessor.processCheckpoints(cpu, currentIP);
+				int tempEIP = cpu.eip;
+				cpu.eip += position > 0 ? cumulativeX86Length[position - 1] : 0;
 				if(cpu.fastProcessRealModeInterrupts()) {
 					return Math.max(cumulativeX86Length[position], 0);
 				}
+				cpu.eip = tempEIP;
 				if(uCodeXferLoaded) {
 					uCodeXferLoaded = false;
 					reg0 = uCodeXferReg0;

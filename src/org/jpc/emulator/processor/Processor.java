@@ -859,7 +859,7 @@ public class Processor implements HardwareComponent {
 	
 	public final boolean fastProcessRealModeInterrupts() {
 		boolean result = false;
-		if(interruptRaised) {
+		//if(interruptRaised) {
 //			if((interruptFlags & IFLAGS_RESET_REQUEST) != 0) {
 //				reset();
 //				return;
@@ -874,7 +874,7 @@ public class Processor implements HardwareComponent {
 //			}
 			result = eflagsInterruptEnable && (interruptFlags & IFLAGS_HARDWARE_INTERRUPT) != 0;
 			processRealModeInterrupts();
-		}
+		//}
 		//eflagsInterruptEnable = eflagsInterruptEnableSoon;
 		return result;
 	}

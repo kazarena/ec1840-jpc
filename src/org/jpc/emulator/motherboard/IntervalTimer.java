@@ -394,7 +394,7 @@ public class IntervalTimer implements IOPortCapable, HardwareComponent {
 			case MODE_HARDWARE_RETRIGGERABLE_ONE_SHOT:
 			case MODE_SOFTWARE_TRIGGERED_STROBE:
 			case MODE_HARDWARE_TRIGGERED_STROBE:
-				return (int) ((countValue - now) & 0xfffff); 		// SN: Note - it used to be 0xffff1 !!!
+				return (int) ((countValue - now) & 0xffff1); 		// SN: Note - it used to be 0xffff1 !!!
 			case MODE_SQUARE_WAVE:
 				return (int) (countValue - ((2 * now) % countValue));
 			case MODE_RATE_GENERATOR:
