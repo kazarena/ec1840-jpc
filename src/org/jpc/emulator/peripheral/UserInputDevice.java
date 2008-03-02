@@ -1,6 +1,8 @@
 package org.jpc.emulator.peripheral;
 
-public interface UserInputDevice {
+import org.jpc.emulator.HardwareComponent;
+
+public interface UserInputDevice extends HardwareComponent {
 	void keyPressed(byte scancode);
 
 	void keyReleased(byte scancode);

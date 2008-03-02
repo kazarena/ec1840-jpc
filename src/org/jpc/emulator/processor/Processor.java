@@ -452,6 +452,7 @@ public class Processor implements HardwareComponent {
 		synchronized(this) {
 			interruptFlags |= IFLAGS_HARDWARE_INTERRUPT;
 			interruptRaised = true;//eflagsInterruptEnable;
+			countdown = 0;
 			this.notifyAll();
 		}
 	}
@@ -847,7 +848,7 @@ public class Processor implements HardwareComponent {
 			}
 
 			if((interruptFlags & IFLAGS_HARDWARE_INTERRUPT) != 0) {
-				System.out.println("processRealModeInterrupts()");
+				//System.out.println("processRealModeInterrupts()");
 				interruptRaised = false;
 				interruptFlags &= ~IFLAGS_HARDWARE_INTERRUPT;
 				int vector = interruptController.cpuGetInterrupt();
@@ -857,9 +858,12 @@ public class Processor implements HardwareComponent {
 		eflagsInterruptEnable = eflagsInterruptEnableSoon;
 	}
 	
+	private int countdown = 0;
+	private final int COUNTDOWN_THRESHOLD = 0;
+	
 	public final boolean fastProcessRealModeInterrupts() {
 		boolean result = false;
-		//if(interruptRaised) {
+		if(interruptRaised) {
 //			if((interruptFlags & IFLAGS_RESET_REQUEST) != 0) {
 //				reset();
 //				return;
@@ -872,9 +876,13 @@ public class Processor implements HardwareComponent {
 //				int vector = interruptController.cpuGetInterrupt();
 //				handleRealModeInterrupt(vector);
 //			}
+			if(countdown==COUNTDOWN_THRESHOLD) {
 			result = eflagsInterruptEnable && (interruptFlags & IFLAGS_HARDWARE_INTERRUPT) != 0;
 			processRealModeInterrupts();
-		//}
+			} else {
+				countdown++;
+			}
+		}
 		//eflagsInterruptEnable = eflagsInterruptEnableSoon;
 		return result;
 	}
@@ -921,7 +929,7 @@ public class Processor implements HardwareComponent {
 	}
 
 	private final void handleRealModeInterrupt(int vector) {
-		System.out.println("Real Mode execption " + Integer.toHexString(vector));
+		//System.out.println("Real Mode exception " + Integer.toHexString(vector));
 
 		// TODO: the following is for real-mode interrupts.
 		// probably need to check mode here and act accordingly.
