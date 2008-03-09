@@ -124,15 +124,15 @@ public class PCMonitor extends KeyHandlingPanel implements GraphicsDisplay {
 	}
 
 	public void repeatedKeyPress(int keyCode) {
-		keyboard.keyPressed(KeyMapping.getScancode(new Integer(keyCode)));
+		keyboard.keyPressed(pc.getKeyMapping().getScancode(new Integer(keyCode)));
 	}
 
 	public void keyPressed(int keyCode) {
-		keyboard.keyPressed(KeyMapping.getScancode(new Integer(keyCode)));
+		keyboard.keyPressed(pc.getKeyMapping().getScancode(new Integer(keyCode)));
 	}
 
 	public void keyReleased(int keyCode) {
-		keyboard.keyReleased(KeyMapping.getScancode(new Integer(keyCode)));
+		keyboard.keyReleased(pc.getKeyMapping().getScancode(new Integer(keyCode)));
 	}
 
 	public void mouseEventReceived(int dx, int dy, int dz, int buttons) {

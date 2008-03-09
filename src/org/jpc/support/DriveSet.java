@@ -277,14 +277,14 @@ public class DriveSet extends AbstractHardwareComponent {
 
 		String cdRomFileName = ArgProcessor.findArg(args, "-cdrom", null);
 		if(cdRomFileName != null) {
-			try {
-				Class ioDeviceClass = Class.forName("org.jpc.support.FileBackedSeekableIODevice");
-				SeekableIODevice ioDevice = (SeekableIODevice) (ioDeviceClass.newInstance());
-				ioDevice.configure(cdRomFileName);
-				hardDiskC = new CDROMBlockDevice(ioDevice);
-				bootKey = DriveSet.CD_BOOT;
-			} catch(Exception e) {
-			}
+//			try {
+//				Class ioDeviceClass = Class.forName("org.jpc.support.FileBackedSeekableIODevice");
+//				SeekableIODevice ioDevice = (SeekableIODevice) (ioDeviceClass.newInstance());
+//				ioDevice.configure(cdRomFileName);
+//				hardDiskC = new CDROMBlockDevice(ioDevice);
+//				bootKey = DriveSet.CD_BOOT;
+//			} catch(Exception e) {
+//			}
 		}
 
 		String bootArg = ArgProcessor.findArg(args, "-boot", null);

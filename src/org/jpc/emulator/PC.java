@@ -36,6 +36,7 @@ import org.jpc.emulator.memory.codeblock.CodeBlock;
 import org.jpc.emulator.pci.peripheral.VideoCard;
 import org.jpc.emulator.peripheral.UserInputDevice;
 import org.jpc.emulator.processor.Processor;
+import org.jpc.j2se.KeyMapping;
 import org.jpc.support.BlockDevice;
 import org.jpc.support.Clock;
 import org.jpc.support.DriveSet;
@@ -83,4 +84,6 @@ public interface PC {
 	public CodeBlock decodeCodeBlockAt(int address);
 
 	public int executeStep();
+	
+	public KeyMapping getKeyMapping();
 }

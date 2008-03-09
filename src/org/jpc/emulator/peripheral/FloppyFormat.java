@@ -59,19 +59,19 @@ public class FloppyFormat
 	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_144, DISK_720, 13, 80, 1, "1.04 MB 3\"1/2" ),
 	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_144, DISK_720, 14, 80, 1, "1.12 MB 3\"1/2" ),
 	/* 1.2 MB 5"1/4 floppy disks */
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 15, 80, 1,  "1.2 kB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 18, 80, 1, "1.44 MB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 18, 82, 1, "1.48 MB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 18, 83, 1, "1.49 MB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 20, 80, 1,  "1.6 MB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 15, 80, 1,  "1.2 kB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 18, 80, 1, "1.44 MB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 18, 82, 1, "1.48 MB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 18, 83, 1, "1.49 MB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 20, 80, 1,  "1.6 MB 5\"1/4" ),
 	/* 720 kB 5"1/4 floppy disks */
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 9, 80, 1,  "720 kB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 11, 80, 1,  "880 kB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 9, 80, 1,  "720 kB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 11, 80, 1,  "880 kB 5\"1/4" ),
 	/* 360 kB 5"1/4 floppy disks */
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 9, 40, 1,  "360 kB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 9, 40, 0,  "180 kB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 10, 41, 1,  "410 kB 5\"1/4" ),
-	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 10, 42, 1,  "420 kB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 9, 40, 1,  "360 kB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 9, 40, 0,  "180 kB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 10, 41, 1,  "410 kB 5\"1/4" ),
+	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_720, 10, 42, 1,  "420 kB 5\"1/4" ),
 	/* 320 kB 5"1/4 floppy disks */ 
 	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 8, 40, 1,  "320 kB 5\"1/4" ),
 	new FloppyFormat( FloppyController.FloppyDrive.DRIVE_120, DISK_288, 8, 40, 0,  "160 kB 5\"1/4" ),
@@ -136,6 +136,7 @@ public class FloppyFormat
 		break;
 	    if ((drive == formats[i].drive()) || (drive == FloppyController.FloppyDrive.DRIVE_NONE)) {
 		if (formats[i].length() == size) {
+			System.out.println("Found floppy format "+formats[i].description);
 		    return formats[i];
 		}
 		if (firstMatch == -1)

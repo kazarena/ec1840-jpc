@@ -40,6 +40,8 @@ import org.jpc.emulator.peripheral.SerialPort;
 import org.jpc.emulator.peripheral.UserInputDevice;
 import org.jpc.emulator.processor.ModeSwitchException;
 import org.jpc.emulator.processor.Processor;
+import org.jpc.j2se.KeyMapping;
+import org.jpc.j2se.StandardKeyMapping;
 import org.jpc.support.BlockDevice;
 import org.jpc.support.Clock;
 import org.jpc.support.DriveSet;
@@ -77,6 +79,8 @@ public class OxfordPC implements PC {
     private SystemBIOS sysBIOS;
 
     private HardwareComponent[] myParts;
+    
+    private KeyMapping keyMapping;
 
     public OxfordPC(Clock clock, DriveSet drives) throws IOException
     {
@@ -107,7 +111,7 @@ public class OxfordPC implements PC {
 
 	serialDevice0 = new SerialPort(0);
 	kbdDevice = new Keyboard();
-	fdc = new FloppyController();
+	fdc = new FloppyController(FloppyController.FloppyDrive.DRIVE_144);
 	speaker = new PCSpeaker();
 
 	//PCI Stuff
@@ -119,6 +123,8 @@ public class OxfordPC implements PC {
 	sysBIOS = new SystemBIOS("bios.bin");
 	vgaBIOS = new VGABIOS("vgabios.bin");
 
+	keyMapping = new StandardKeyMapping();
+	
 	myParts = new HardwareComponent[]{processor, vmClock, physicalAddr, linearAddr,
 					  ioportHandler, irqController,
 					  primaryDMA, secondaryDMA, rtc, pit, gateA20,
@@ -468,4 +474,8 @@ public class OxfordPC implements PC {
 
 	public void setCheckpoints(List<Checkpoint> checkpoints) {
 	}   
+	
+	public KeyMapping getKeyMapping() {
+		return keyMapping;
+	}
 }

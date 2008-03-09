@@ -111,9 +111,11 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 	private InterruptController irqDevice;
 	private DMAController dma;
 
-	public FloppyController() {
+	public FloppyController(int driveType) {
 		ioportRegistered = false;
 		drives = new FloppyDrive[2];
+//		drives[0].drive = driveType;
+//		drives[1].drive = driveType;
 
 		config = (byte) 0x60; /* Implicit Seek, polling & fifo enabled */
 		state = CONTROL_ACTIVE;
@@ -188,7 +190,7 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 	}
 
 	public int ioPortReadByte(int address) {
-		System.out.println("Read from " + Integer.toHexString(address));
+		//System.out.println("Read from " + Integer.toHexString(address));
 		switch(address & 0x07) {
 		case 0x01:
 			return readStatusB();
@@ -197,7 +199,7 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 		case 0x03:
 			return readTape();
 		case 0x04:
-			System.out.println("Main status = " + Integer.toHexString(readMainStatus()));
+			//System.out.println("Main status = " + Integer.toHexString(readMainStatus()));
 			return readMainStatus();
 		case 0x05:
 			return readData();
@@ -217,7 +219,7 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 	}
 
 	public void ioPortWriteByte(int address, int data) {
-		System.out.println("Write to " + Integer.toHexString(address) + " " + Integer.toHexString(data));
+		//System.out.println("Write to " + Integer.toHexString(address) + " " + Integer.toHexString(data));
 		switch(address & 0x07) {
 		case 0x02:
 			writeDOR(data);
@@ -1066,11 +1068,11 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 		return length;
 	}
 
-	static class FloppyDrive {
-		static final int DRIVE_144 = 0x00; // 1.44 MB 3"5 drive
-		static final int DRIVE_288 = 0x01; // 2.88 MB 3"5 drive
-		static final int DRIVE_120 = 0x02; // 1.2 MB 5"25 drive
-		static final int DRIVE_NONE = 0x03; // No drive connected
+	public static class FloppyDrive {
+		public static final int DRIVE_144 = 0x00; // 1.44 MB 3"5 drive
+		public static final int DRIVE_288 = 0x01; // 2.88 MB 3"5 drive
+		public static final int DRIVE_120 = 0x02; // 1.2 MB 5"25 drive
+		public static final int DRIVE_NONE = 0x03; // No drive connected
 
 		static final int MOTOR_ON = 0x01; // motor on/off
 		static final int REVALIDATE = 0x02; // Revalidated
@@ -1078,7 +1080,7 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 		static final int DOUBLE_SIDES = 0x01;
 
 		BlockDevice device;
-		int drive;
+		int drive;// = DRIVE_120;
 		int driveFlags;
 		int perpendicular;
 		int head;
@@ -1188,6 +1190,7 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 		}
 
 		public int read(int sector, byte[] buffer, int length) {
+			System.out.println("Reading from sector "+sector);
 			return device.read(0xffffffffl & sector, buffer, length);
 		}
 
@@ -1202,6 +1205,7 @@ public class FloppyController implements IOPortCapable, DMATransferCapable, Hard
 
 		public void revalidate() {
 			driveFlags &= ~REVALIDATE;
+			drive = DRIVE_120;
 			if(device != null && device.inserted()) {
 				format = FloppyFormat.findFormat(device.getTotalSectors(), drive);
 				if(format.heads() == 1) {
